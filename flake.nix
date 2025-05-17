@@ -35,8 +35,6 @@
 
         defaultPackage = lizzyPkg;
 
-        homeModules = { default = { home.packages = [ lizzyPkg ]; }; };
-
         apps = {
           lizzy = {
             type = "app";

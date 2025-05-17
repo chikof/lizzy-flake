@@ -24,14 +24,6 @@ environment.systemPackages = with pkgs; [
 ];
 ```
 
-Or
-
-```nix
-import = [
-    inputs.lizzy-flake.packages.${pkgs.system}.homeModules
-];
-```
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
