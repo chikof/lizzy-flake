@@ -20,7 +20,7 @@ Then, include it in your system configuration or user environment.
 
 ```nix
 environment.systemPackages = with pkgs; [
-    inputs.lizzy.packages.${pkgs.system}.lizzy
+    inputs.lizzy-flake.packages.${pkgs.system}.lizzy
 ];
 ```
 
