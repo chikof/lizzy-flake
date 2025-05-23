@@ -1,5 +1,6 @@
 {
-  description = "lizzy: a customizable Waybar media‑playback module";
+  description =
+    "A customizable Waybar module for media playback that uses DBus signals.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,6 +17,7 @@
           rev = "main";
           sha256 = "sha256-bq1CmjMbClflzEm2MwWHzlV3XqJh/YYqe2bkcj5mF1s=";
         };
+
         lizzyPkg = pkgs.rustPlatform.buildRustPackage {
           pname = "lizzy";
           version = "unstable";
@@ -25,21 +27,12 @@
 
           meta = with pkgs.lib; {
             description =
-              "A customizable Waybar module for media playback via DBus MPRIS";
+              "Lizzy is a simple and small app that lets Waybar display what song or media is playing by listening to DBus signals instead of polling.";
+            homepage = "https://github.com/stefur/lizzy";
             license = licenses.mit;
             platforms = platforms.unix;
+            mainProgram = "lizzy";
           };
         };
-      in {
-        packages = { lizzy = lizzyPkg; };
-
-        defaultPackage = lizzyPkg;
-
-        apps = {
-          lizzy = {
-            type = "app";
-            program = "${lizzyPkg}/bin/lizzy";
-          };
-        };
-      });
+      in { packages = { default = lizzyPkg; }; });
 }

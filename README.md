@@ -1,6 +1,6 @@
 # Lizzy Flake
 
-This repository provides a nix flake for Lizzy, a customizable Waybar module for media playback that uses DBus signals.
+This repository provides a nix flake for [Lizzy], a customizable Waybar module for media playback that uses DBus signals.
 
 ## Introduction
 
@@ -20,10 +20,12 @@ Then, include it in your system configuration or user environment.
 
 ```nix
 environment.systemPackages = with pkgs; [
-    inputs.lizzy-flake.packages.${pkgs.system}.lizzy
+    inputs.lizzy-flake.packages.${pkgs.system}
 ];
 ```
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+[lizzy]: https://github.com/stefur/lizzy
